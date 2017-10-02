@@ -6,7 +6,7 @@
     * [영어](#영어)
     * [한국어](#한국어)
 
-## Englsih
+## English
 > Rule the words! KTtu online
 
 It will be added later...
