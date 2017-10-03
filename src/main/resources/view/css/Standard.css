@@ -1,0 +1,19 @@
+#chat_wrap {
+    border: black solid 1px;
+    width: 70%;
+}
+
+.chat_head {
+    display: inline-block;
+    width: 10%;
+}
+
+.chat_body {
+    display: inline-block;
+    width: 75%;
+}
+
+.chat_stamp {
+    display: inline-block;
+    width: 15%;
+}
