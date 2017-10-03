@@ -12,6 +12,7 @@ class Setting(json: JsonObject) {
         //
         internal lateinit var _INSTANCE: Setting
     }
+
     val port by json.byInt("server-port") { 8080 }
-    val logSettings by json.byClass(init = ::LogSetting)
+    val logSettings by json.byClass("log", init = ::LogSetting)
 }
