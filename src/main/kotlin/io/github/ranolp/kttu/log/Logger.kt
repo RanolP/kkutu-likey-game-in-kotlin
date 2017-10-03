@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter
 object Logger {
     enum class LogLevel(val level: Int) {
         ALL(Integer.MIN_VALUE),
+        VERBOSE(-1),
         INFO(0),
         WARNING(1),
         ERROR(2),
@@ -14,10 +15,12 @@ object Logger {
     }
 
     private var formatter: DateTimeFormatter? = null
-    var level: LogLevel = LogLevel.INFO
+    val logLevel: LogLevel by lazy {
+        LogLevel.values().firstOrNull { it.name.toLowerCase() == LogSetting.INSTANCE.level.toLowerCase() } ?: LogLevel.INFO
+    }
 
     private fun log(level: LogLevel, text: String) {
-        if (Logger.level.level > level.level) {
+        if (Logger.logLevel.level > level.level) {
             return
         }
         val now = LocalDateTime.now()
@@ -25,6 +28,10 @@ object Logger {
             formatter = DateTimeFormatter.ofPattern(LogSetting.INSTANCE.dateSyntax)
         }
         println("[${now.format(formatter)}/$level] $text")
+    }
+
+    fun verbose(text: String) {
+        log(LogLevel.VERBOSE, text)
     }
 
     fun info(text: String) {

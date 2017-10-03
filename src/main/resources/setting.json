@@ -1,5 +1,5 @@
 {
-  "server-port": 1234,
+  "server-port": 8080,
   "log": {
     "date-syntax": "yy-MM-dd hh:mm:ss",
     "level": "info"
