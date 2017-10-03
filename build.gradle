@@ -41,6 +41,7 @@ dependencies {
     compile "ch.qos.logback:logback-classic:1.2.1"
     compile 'com.github.salomonbrys.kotson:kotson:2.5.0'
     testCompile "junit:junit:4.12"
+    testCompile "org.jetbrains.ktor:ktor-test-host:$ktor_version"
 }
 
 compileKotlin {
