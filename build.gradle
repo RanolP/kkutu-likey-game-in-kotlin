@@ -1,6 +1,7 @@
 buildscript {
     ext.kotlin_version = '1.1.51'
-    ext.ktor_version = '0.4.0'
+    ext.ktor_version = '0.4.1-alpha-16'
+    ext.mainClassName = 'io.github.ranolp.kttu.Main'
 
     repositories {
         mavenCentral()
@@ -38,6 +39,7 @@ dependencies {
     compile "org.jetbrains.ktor:ktor-server-sessions:$ktor_version"
     compile "org.jetbrains.ktor:ktor-websockets:$ktor_version"
     compile "ch.qos.logback:logback-classic:1.2.1"
+    compile 'com.github.salomonbrys.kotson:kotson:2.5.0'
     testCompile "junit:junit:4.12"
 }
 
@@ -46,4 +48,16 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+jar {
+    manifest {
+        attributes 'Title': 'KTtu', 'Version': version, 'Main-Class': mainClassName
+    }
+    dependsOn configurations.runtime
+    from {
+        configurations.compile.collect {it.isDirectory()? it: zipTree(it)}
+    }
+    into 'resources', {
+        from 'resources'
+    }
 }
