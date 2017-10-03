@@ -46,3 +46,11 @@ object Json {
         return GSON.fromJson(jsonObject, T::class.java)
     }
 }
+
+inline fun JsonElement.prettyPrint() {
+    prettyPrint(::println)
+}
+
+inline fun JsonElement.prettyPrint(crossinline print: (String) -> Unit) {
+    print(Json.PRETTY_GSON.toJson(this))
+}
