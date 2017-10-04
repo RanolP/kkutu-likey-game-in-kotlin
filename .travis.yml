@@ -4,4 +4,4 @@ before_install:
 before_script:
   - cd src/main
 script:
-  - ../../gradlew check
+  - ../../gradlew assemble
