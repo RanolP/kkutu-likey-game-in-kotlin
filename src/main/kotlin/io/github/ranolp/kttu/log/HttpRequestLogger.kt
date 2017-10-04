@@ -10,23 +10,27 @@ import org.jetbrains.ktor.request.httpMethod
 import org.jetbrains.ktor.request.httpVersion
 import org.jetbrains.ktor.request.uri
 import org.jetbrains.ktor.util.AttributeKey
+import java.net.URLDecoder
 
 class HttpRequestLogger(val config: Configuration) {
     class Configuration {
         var format: (String, String, String?, String, HttpStatusCode?) -> String = { uri, method, host, version, status ->
-            "$uri \"$method $host HTTP/$version\" $status"
+            "$uri \"$method $host $version\" $status"
         }
         var logger: (String) -> Unit = {
             println(it)
         }
+        var decodeUrl = true
     }
 
     fun intercept(call: ApplicationCall) {
-        config.logger(config.format(call.request.uri,
-                call.request.httpMethod.value,
-                call.request.host(),
-                call.request.httpVersion,
-                call.response.status()))
+        config.logger(config.format(call.request.uri.let {
+            if (config.decodeUrl) {
+                URLDecoder.decode(it, "UTF-8")
+            } else {
+                it
+            }
+        }, call.request.httpMethod.value, call.request.host(), call.request.httpVersion, call.response.status()))
     }
 
     companion object Feature : ApplicationFeature<Application, Configuration, HttpRequestLogger> {
