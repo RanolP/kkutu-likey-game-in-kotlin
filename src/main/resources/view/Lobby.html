@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Waffle :: Lobby</title>
     <link rel="stylesheet" charset="UTF-8" href="css/Standard.css">
+    <script src="/js/main.js"></script>
 </head>
 <body>
     <h1>Lobby Page</h1>
@@ -26,15 +27,11 @@
             <div id="chat_title">
                 <h5>채팅</h5>
             </div>
-            <div id="chat">
-                <div class="chat_item">
-                    <div class="chat_head">Ranol_</div>
-                    <div class="chat_body">Hello, world!</div>
-                    <div class="chat_stamp">오후 4시 17분 14초</div>
-                </div>
+            <div id="chat"></div>
+            <div id="chat_input_wrap">
+                <input id="chat_input" maxlength="200">
+                <button id="chat_send">전송</button>
             </div>
-            <input id="chat_input" maxlength="200">
-            <button id="send">전송</button>
         </div>
     </div>
 

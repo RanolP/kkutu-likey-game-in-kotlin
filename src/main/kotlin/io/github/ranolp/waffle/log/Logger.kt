@@ -45,4 +45,10 @@ object Logger {
     fun error(text: String) {
         log(LogLevel.ERROR, text)
     }
+
+    fun error(throwable: Throwable) {
+        log(LogLevel.ERROR,
+                (throwable::class.simpleName + ": " + throwable.message + throwable.stackTrace.joinToString { "\n  at ${it.className}.${it.methodName}" + if (it.isNativeMethod) "(Native Method)" else "(${it.fileName}:${it.lineNumber})" }).color(
+                        text = Text.RED))
+    }
 }
