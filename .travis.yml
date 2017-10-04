@@ -1,7 +1,3 @@
 language: java
 before_install:
   - chmod +x gradlew
-before_script:
-  - cd src/main
-script:
-  - ../.././gradlew assemble

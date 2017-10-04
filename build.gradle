@@ -56,7 +56,7 @@ jar {
     }
     dependsOn configurations.runtime
     from {
-        configurations.compile.collect {it.isDirectory()? it: zipTree(it)}
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
     into 'resources', {
         from 'resources'
