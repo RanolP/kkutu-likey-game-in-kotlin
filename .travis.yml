@@ -2,6 +2,6 @@ language: java
 before_install:
   - chmod +x gradlew
 before_script:
-  - cd src/mains
+  - cd src/main
 script:
   - ../../gradlew check
