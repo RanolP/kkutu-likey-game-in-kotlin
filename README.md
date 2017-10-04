@@ -12,6 +12,9 @@
 
 It will be added later...
 
+### Special Thanks
+  * Name a project: [OnLiU](https://github.com/OnLiU211)
+
 ## 한국어
 > 글자로 놀자! 끄투 온라인
 
@@ -29,3 +32,7 @@ Waffle  의 목표는 기존에 존재하던 끄투를 Kotlin 을 기반으로 �
  * [ ] Full-customizable 한 클라이언트 UI 구현
  * [ ] Redis 를 활용한 랭킹 시스템 구축
  * [ ] Waffle Wiki 구축
+
+
+### 도움
+  * 프로젝트 작명: [OnLiU](https://github.com/OnLiU211)
