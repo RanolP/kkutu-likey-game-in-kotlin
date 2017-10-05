@@ -3,34 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Waffle :: Lobby</title>
-    <link rel="stylesheet" charset="UTF-8" href="css/Standard.css">
-    <script src="/js/main.js"></script>
+    <link rel="stylesheet" charset="UTF-8" href="/file/css/Standard.css">
+    <script src="/file/js/main.js"></script>
+    <script src="https://use.fontawesome.com/e37555fe75.js"></script>
 </head>
 <body>
-    <h1>Lobby Page</h1>
-    <p>TODO</p>
-    <div id="menu">
-        <!-- 도움말 같은걸 추가해야함 -->
-        <!-- 설정 같은걸 추가해야함 -->
+    <div id="menu-wrap">
+        <button id="guide" class="mini"><i class="fa fa-question-circle"></i></button>
+        <button id="setting" class="mini"><i class="fa fa-wrench"></i></button>
+        <button id="friend" class="mini"><i class="fa fa-comment"></i></button>
     </div>
-
     <div id="game">
-        <div id="user_list">
-
-        </div>
-        <div id="room_list">
-
-        </div>
-        <div id="me">
-        </div>
-        <div id="chat_wrap">
-            <div id="chat_title">
-                <h5>채팅</h5>
+        <div id="game-up">
+            <div id="user-list-wrap">
+                <div class="title">
+                    <i class="fa fa-user"></i>
+                    <b>XX 채널 접속자</b><span class="mini">(알 수 없음)</span>
+                </div>
+                <div id="user-list"></div>
             </div>
-            <div id="chat"></div>
-            <div id="chat_input_wrap">
-                <input id="chat_input" maxlength="200">
-                <button id="chat_send">전송</button>
+            <div id="room-list-wrap">
+                <div class="title">
+                    <i class="fa fa-archive"></i>
+                    <b>전체 게임방</b><span class="mini"> (알 수 없음)</span>
+                </div>
+            </div>
+        </div>
+        <div id="game-down">
+            <div id="me-wrap">
+                <div class="title">
+                    <i class="fa fa-bell"></i>
+                    <b>내 정보</b>
+                </div>
+                <div id="my-stat">
+                    <div id="stat-level-icon"></div>
+                    <div id="stat-name"></div>
+                    <div id="stat-record"></div>
+                    <div id="stat-money"></div>
+                </div>
+                <!--img -->
+            </div>
+            <div id="chat-wrap">
+                <div class="title">
+                    <i class="fa fa-comment"></i>
+                    <b>채팅</b>
+                </div>
+                <div id="chat"></div>
+                <div id="chat-input-wrap">
+                    <input id="chat-input" maxlength="200">
+                    <button id="chat-send">전송</button>
+                </div>
             </div>
         </div>
     </div>

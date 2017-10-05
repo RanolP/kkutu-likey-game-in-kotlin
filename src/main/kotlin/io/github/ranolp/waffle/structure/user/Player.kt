@@ -9,15 +9,14 @@ import org.jetbrains.ktor.websocket.WebSocketSession
 import org.jetbrains.ktor.websocket.close
 import java.nio.ByteBuffer
 
-data class Player(override val id: String) : User {
+class Player(override val id: String) : User {
     internal var session: WebSocketSession? = null
     override var displayName: String = id
-    override var locale: String
-        get() = "ko"
-        set(value) {}
+    override val locale = "ko"
+    override val icon = "/file/image/Unknown.png"
     suspend override fun sendPacket(packet: OutPacket) {
         val session = this.session
-        if(session === null) {
+        if (session === null) {
             return
         }
         Logger.verbose("Send packet ${packet::class.simpleName}(${packet.id}) to $displayName")
@@ -31,5 +30,13 @@ data class Player(override val id: String) : User {
                 // at some point it will get closed
             }
         }
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return this === other || (other as? User)?.id == id
+    }
+
+    override fun hashCode(): Int {
+        return id.hashCode()
     }
 }

@@ -21,6 +21,7 @@ import org.jetbrains.ktor.host.embeddedServer
 import org.jetbrains.ktor.http.HttpStatusCode
 import org.jetbrains.ktor.netty.Netty
 import org.jetbrains.ktor.request.uri
+import org.jetbrains.ktor.response.respond
 import org.jetbrains.ktor.response.respondText
 import org.jetbrains.ktor.routing.get
 import org.jetbrains.ktor.routing.route
@@ -54,27 +55,25 @@ fun Application.module() {
         cookie<Player>("SESSION")
     }
     routing {
-        staticRootFolder = File("resources/view/")
+        staticRootFolder = File("resources/")
 
-        static("/css") {
-            static("/Standard.css") {
-                default("css/Standard.css")
-            }
+        get("/file/{file...}") {
+            call.respond(LocalFileContent(File(this@routing.staticRootFolder,
+                    call.parameters.getAll("file")?.joinToString("/") ?: "")))
         }
-        static("/js") {
-            static("/main.js") {
-                default("js/main.js")
-            }
+
+        static("/favicon.ico") {
+            default("favicon.ico")
         }
 
         intercept(ApplicationCallPipeline.Infrastructure) {
-            if (call.sessions.get<Player>() !== null) {
+            if (call.sessions.get<Player>() === null) {
                 call.sessions.set(Player(nextNonce()))
             }
         }
 
         static("/lobby") {
-            default("Lobby.html")
+            default("view/Lobby.html")
         }
         webSocket("/ws") {
             val player = call.sessions.get<Player>()
@@ -86,7 +85,6 @@ fun Application.module() {
                 return@webSocket
             }
             Server.joinPlayer(player)
-            player.sendMessage("어서와!")
             try {
                 incoming.consumeEach { frame ->
                     if (frame is Frame.Text) {

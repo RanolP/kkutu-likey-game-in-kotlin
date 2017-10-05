@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #222;
+}
+
+/* Layout */
+#game {
+    width: 80%;
+    height: 600px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#game-up, #game-down {
+    display: flex;
+    flex-direction: row !important;
+}
+
+#game-up {
+    flex: 7;
+}
+
+#game-down {
+    flex: 3;
+}
+
+#user-list-wrap, #me-wrap {
+    flex: 2;
+}
+
+#room-list-wrap, #chat-wrap {
+    flex: 8;
+}
+
+#menu-wrap, #game {
+    left: 10%;
+    position: relative;
+}
+
+/* General */
+
+.title {
+    border-bottom: 1px solid black;
+    margin-left: 8px;
+    margin-right: 8px;
+    height: 20px;
+}
+
+button:active {
+    filter: brightness(50%);
+}
+
+button, input {
+    outline: none;
+}
+
+/* Menu */
+
+#menu-wrap button {
+    border-radius: 4px 4px 0 0;
+    width: 60px;
+    height: 30px;
+    margin-top: 15px;
+}
+#menu-wrap button.mini {
+    width: 30px;
+}
+
+/* Chat message */
+
+.chat-item {
+    display: flex;
+}
+
+.chat-from {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+.chat-message {
+    display: inline-block;
+    width: 70%;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.chat-stamp {
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+    width: calc(20% - 24px);
+}
+
+/* Chat input */
+#chat {
+    overflow: scroll;
+    height: calc(100% - 50px);
+}
+
+#chat-input-wrap {
+    height: 30px;
+}
+
+#chat-input {
+    display: inline-block;
+    width: calc(100% - 80px);
+}
+
+#chat-send {
+    background: white;
+    width: 76px;
+}
+
+/* User list */
+.user-list-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    float: left;
+}
+
+.user-list-name {
+    display: inline-block;
+}
