@@ -16,7 +16,7 @@ It will be added later...
   * Name a project: [OnLiU](https://github.com/OnLiU211)
 
 ## 한국어
-> 글자로 놀자! 끄투 온라인
+> 글자로 놀자! 와플 온라인
 
 **Waffle** 는 [쪼리핑](http://blog.jjo.kr/)님의 [끄투](https://github.com/JJoriping/KKuTu)에서 영감을 얻어 만들어졌습니다.
 Waffle  의 목표는 기존에 존재하던 끄투를 Kotlin 을 기반으로 한 코드로 고치는 것입니다.
@@ -26,7 +26,9 @@ Waffle  의 목표는 기존에 존재하던 끄투를 Kotlin 을 기반으로 �
 **주의:** 이 레포지토리는 연습용으로 쓰일 가능성이 높습니다.
 
 ### 목표
- * [ ] 채팅 서버 구축
+ * [x] 채팅 서버 구축
+   * [ ] 동시 접속 지원
+   * [ ] 일반 유저 동시 접속 제한
  * [ ] 방 구축
  * [ ] 한국어 끝말잇기 게임 제작
  * [ ] Full-customizable 한 클라이언트 UI 구현
