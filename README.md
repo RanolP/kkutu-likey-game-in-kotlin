@@ -13,7 +13,7 @@
 > Rule the words! Waffle online
 
 **Waffle** inspired by [JJoriping](http://blog.jjo.kr/)'s [KKuTu](https://github.com/JJoriping/KKuTu).
-**Waffle**'s goal is replace a code of KuTTu based on Kotlin
+**Waffle**'s goal is replace a code of KKuTu based on Kotlin
 
 **Warning:** This project is likely to be abandoned.
 
