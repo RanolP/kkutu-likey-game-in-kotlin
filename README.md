@@ -12,7 +12,7 @@
 
 > Rule the words! Waffle online
 
-**Waffle** inspired by [JJoriping](http://blog.jjo.kr/)'s [KuTTu](https://github.com/JJoriping/KKuTu).
+**Waffle** inspired by [JJoriping](http://blog.jjo.kr/)'s [KKuTu](https://github.com/JJoriping/KKuTu).
 **Waffle**'s goal is replace a code of KuTTu based on Kotlin
 
 **Warning:** This project is likely to be abandoned.
@@ -23,11 +23,12 @@
   * [x] Build a chat server
     * [ ] Simultaneous connection support
     * [ ] Limit general user simultaneous connection
-  * Build a game room
-  * Make a Korean word relay
-  * Build fully-customizable client UI
-  * Build ranking system with Redis
-  * Build Waffle wiki
+  * [ ] Build a game room
+  * [ ] Make a Korean word relay
+  * [ ] Build fully-customizable client UI
+  * [ ] Build ranking system with Redis
+  * [ ] Build Waffle wiki
+  * [ ] Responsive web design
 
 ### Special Thanks
   * Name a project: [OnLiU](https://github.com/OnLiU211)
@@ -36,7 +37,7 @@
 ## 한국어
 > 글자로 놀자! 와플 온라인
 
-**Waffle** 는 [쪼리핑](http://blog.jjo.kr/)님의 [끄투](https://github.com/JJoriping/KKuTu)에서 영감을 얻어 만들어졌습니다.
+**Waffle** 은 [쪼리핑](http://blog.jjo.kr/)님의 [끄투](https://github.com/JJoriping/KKuTu)에서 영감을 얻어 만들어졌습니다.
 Waffle  의 목표는 기존의 끄투를 Kotlin 을 기반으로 한 코드로 고치는 것입니다.
 
 **주의:** 이 프로젝트는 중도 포기될 가능성이 높습니다.
@@ -52,6 +53,7 @@ Waffle  의 목표는 기존의 끄투를 Kotlin 을 기반으로 한 코드로 
  * [ ] 모든 부분 수정 가능한 클라이언트 UI 구현
  * [ ] Redis 를 활용한 랭킹 시스템 구축
  * [ ] Waffle Wiki 구축
+ * [ ] 반응형 웹 디자인
 
 
 ### 도움
